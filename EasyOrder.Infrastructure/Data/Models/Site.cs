@@ -19,12 +19,16 @@
 
         [Required]
         [MaxLength(SiteTypeMaxLength, ErrorMessage = MaxLengthErrorMessage)]
-        [Comment("Type of the site (e.g, Restaurant, Pizzeria, Cafe, Buffet, Pub, Bar and Gril)")]
+        [Comment("Type of the site (e.g., Restaurant, Pizzeria, Cafe, Buffet, Pub, Bar and Gril)")]
         public string Type { get; set; } = string.Empty;
 
         [Required]
         [MaxLength(SiteCityMaxLength, ErrorMessage = MaxLengthErrorMessage)]
         [Comment("The name of the city site belongs to.")]
         public string City { get; set; } = string.Empty;
+
+        // Navigation properties
+
+        public List<Table> Tables { get; set; } = new List<Table>();
     }
 }
