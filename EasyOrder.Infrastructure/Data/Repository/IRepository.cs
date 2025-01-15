@@ -2,7 +2,7 @@
 {
     using System.Linq.Expressions;
 
-    internal interface IRepository
+    public interface IRepository
     {
         /// <summary>
         /// All records in a table

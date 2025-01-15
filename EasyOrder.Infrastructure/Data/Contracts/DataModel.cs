@@ -4,7 +4,7 @@
 
     using Microsoft.EntityFrameworkCore;
 
-    internal class DataModel : IAuditable, IDeletable
+    public class DataModel : IAuditable, IDeletable
     {
         [Key]
         [Comment("Unique data model identifier")]

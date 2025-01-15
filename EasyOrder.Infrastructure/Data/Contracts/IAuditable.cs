@@ -1,6 +1,6 @@
 ﻿namespace EasyOrder.Infrastructure.Data.Contracts
 {
-    internal interface IAuditable
+    public interface IAuditable
     {
         DateTime CreatedOn { get; set; }
 

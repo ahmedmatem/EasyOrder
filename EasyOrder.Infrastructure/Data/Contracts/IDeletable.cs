@@ -1,6 +1,6 @@
 ﻿namespace EasyOrder.Infrastructure.Data.Contracts
 {
-    internal interface IDeletable
+    public interface IDeletable
     {
         bool IsDeleted { get; set; }
 

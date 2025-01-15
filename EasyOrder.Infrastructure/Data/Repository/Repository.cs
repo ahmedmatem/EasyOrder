@@ -5,7 +5,7 @@
     using Microsoft.EntityFrameworkCore.ChangeTracking;
     using Microsoft.EntityFrameworkCore;
 
-    internal class Repository : IRepository
+    public class Repository : IRepository
     {
         private readonly DbContext context;
         private DbSet<T> DbSet<T>() where T : class => context.Set<T>();
