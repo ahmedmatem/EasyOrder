@@ -1,9 +1,10 @@
-using EasyOrder.Web.Data;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-
 namespace EasyOrder.Web
 {
+    using Microsoft.AspNetCore.Identity;
+    using Microsoft.EntityFrameworkCore;
+
+    using EasyOrder.Infrastructure.Data;
+
     public class Program
     {
         public static void Main(string[] args)
