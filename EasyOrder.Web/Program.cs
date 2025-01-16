@@ -1,3 +1,6 @@
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using EasyOrder.Infrastructure.Data;
 namespace EasyOrder.Web
 {
     using Microsoft.AspNetCore.Identity;
