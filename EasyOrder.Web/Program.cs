@@ -1,12 +1,9 @@
 namespace EasyOrder.Web
 {
-    using Microsoft.AspNetCore.Identity;
-    using Microsoft.EntityFrameworkCore;
 
-    using EasyOrder.Infrastructure.Data;
-    using EasyOrder.Web.Extensions;
     using Microsoft.AspNetCore.Mvc;
-    using Microsoft.Extensions.Options;
+
+    using EasyOrder.Web.Extensions;
 
     public class Program
     {
@@ -21,6 +18,8 @@ namespace EasyOrder.Web
             builder.Services.AddControllersWithViews(options =>
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>()
             );
+
+            builder.Services.AddApplicationServices();
 
             var app = builder.Build();
 
@@ -46,7 +45,7 @@ namespace EasyOrder.Web
             app.MapDefaultControllerRoute();
             app.MapRazorPages();
 
-            app.RunAsync();
+            app.Run();
         }
     }
 }

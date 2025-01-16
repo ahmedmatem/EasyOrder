@@ -7,6 +7,12 @@
 
     public static class ServiceExtensions
     {
+        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        {
+
+            return services;
+        }
+
         public static IServiceCollection AddApplicationDbContext(
             this IServiceCollection services, IConfiguration configuration)
         {

@@ -10,8 +10,8 @@
 
         public const int TableNameMaxLength = 10;
 
-        public const int MenuCategoryTitleMaxLength = 60;
-        public const int MenuCategoryDescriptionMaxLength = 100;
+        public const int MenuCategoryTitleMaxLength = 100;
+        public const int MenuCategoryDescriptionMaxLength = 200;
 
     }
 }
