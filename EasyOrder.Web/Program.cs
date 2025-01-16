@@ -1,12 +1,10 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using EasyOrder.Infrastructure.Data;
 namespace EasyOrder.Web
 {
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
 
     using EasyOrder.Infrastructure.Data;
+    using EasyOrder.Web.Extensions;
 
     public class Program
     {
@@ -20,8 +18,8 @@ namespace EasyOrder.Web
                 options.UseSqlServer(connectionString));
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-            builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            builder.Services.AddApplicationIdentity();
+
             builder.Services.AddControllersWithViews();
 
             var app = builder.Build();
