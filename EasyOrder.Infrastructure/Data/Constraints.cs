@@ -7,5 +7,9 @@
         public const int SiteCityMaxLength = 15;
 
         public const int TableNameMaxLength = 10;
+
+        public const int MenuCategoryTitleMaxLength = 60;
+        public const int MenuCategoryDescriptionMaxLength = 100;
+
     }
 }
