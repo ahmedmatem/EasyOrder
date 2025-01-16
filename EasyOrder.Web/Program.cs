@@ -22,6 +22,8 @@ namespace EasyOrder.Web
                 options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>()
             );
 
+            builder.Services.AddApplicationServices();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -46,7 +48,7 @@ namespace EasyOrder.Web
             app.MapDefaultControllerRoute();
             app.MapRazorPages();
 
-            app.RunAsync();
+            app.Run();
         }
     }
 }
