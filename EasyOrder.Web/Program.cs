@@ -5,6 +5,8 @@ namespace EasyOrder.Web
 
     using EasyOrder.Infrastructure.Data;
     using EasyOrder.Web.Extensions;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.Extensions.Options;
 
     public class Program
     {
@@ -16,7 +18,9 @@ namespace EasyOrder.Web
 
             builder.Services.AddApplicationIdentity();
 
-            builder.Services.AddControllersWithViews();
+            builder.Services.AddControllersWithViews(options =>
+                options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>()
+            );
 
             var app = builder.Build();
 
