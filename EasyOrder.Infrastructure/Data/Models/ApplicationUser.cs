@@ -2,7 +2,7 @@
 {
 
     using System.ComponentModel.DataAnnotations;
-
+    using System.ComponentModel.DataAnnotations.Schema;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +15,11 @@
         [MaxLength(ApplicationUserFullNameMaxLength, ErrorMessage = MaxLengthErrorMessage)]
         public string FullName { get; set; } = string.Empty;
 
+        [ForeignKey("Site")]
         [Comment("Unique identifier of the site user/staff participate in.")]
         public string SiteId { get; set; } = string.Empty;
+
+        // Navigation properties
+        public Site Site { get; set; } = null!;
     }
 }
