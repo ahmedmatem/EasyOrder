@@ -20,6 +20,10 @@ namespace EasyOrder.Infrastructure.Data
 
         public DbSet<Site> Sites { get; set; } = null!;
 
-        public DbSet<Table> Tables { get; set; }
+        public DbSet<Table> Tables { get; set; } = null!;
+
+        public DbSet<MenuCategory> MenuCategories { get; set; } = null!;
+
+        public DbSet<MenuItem> MenuItems { get; set; } = null!;
     }
 }

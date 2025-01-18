@@ -64,7 +64,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sites", t =>
+                    b.ToTable("Sites", null, t =>
                         {
                             t.HasComment("Represents the model of food and beverage establishments.");
                         });
@@ -111,7 +111,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
 
                     b.HasIndex("SiteId");
 
-                    b.ToTable("Tables");
+                    b.ToTable("Tables", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
