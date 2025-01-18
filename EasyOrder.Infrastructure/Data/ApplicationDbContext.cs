@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace EasyOrder.Infrastructure.Data
 {
+    using EasyOrder.Infrastructure.Data.Models;
     using Microsoft.EntityFrameworkCore;
 
     public class ApplicationDbContext : IdentityDbContext
@@ -16,5 +17,9 @@ namespace EasyOrder.Infrastructure.Data
 
 
         }
+
+        public DbSet<Site> Sites { get; set; } = null!;
+
+        public DbSet<Table> Tables { get; set; }
     }
 }
