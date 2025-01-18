@@ -1,8 +1,10 @@
 ﻿namespace EasyOrder.Infrastructure.Data.Models
 {
-    using EasyOrder.Infrastructure.Data.Contracts;
-    using Microsoft.EntityFrameworkCore;
     using System.ComponentModel.DataAnnotations.Schema;
+
+    using Microsoft.EntityFrameworkCore;
+
+    using EasyOrder.Infrastructure.Data.Contracts;
 
     public class Order : DataModel
     {
