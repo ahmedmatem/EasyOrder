@@ -11,6 +11,9 @@
 
     public class MenuCategory : DataModel
     {
+        // Foreing key to Site
+        public string SiteId { get; set; } = string.Empty;
+
         [Required]
         [MaxLength(MenuCategoryTitleMaxLength, ErrorMessage = MaxLengthErrorMessage)]
         [Comment("Category name of the menu.")]
@@ -21,5 +24,8 @@
             ErrorMessage = MaxLengthErrorMessage)]
         [Comment("Menu category description.")]
         public string Description { get; set; } = string.Empty;
+
+        // Navigation properties
+        public IList<MenuItem> MyProperty { get; set; } = new List<MenuItem>();
     }
 }
