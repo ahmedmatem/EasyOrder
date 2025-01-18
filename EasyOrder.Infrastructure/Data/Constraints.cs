@@ -16,5 +16,6 @@
         public const int MenuItemTitleMaxLength = 100;
         public const int MenuItemDescriptionMaxLength = 200;
 
+        public const int OrderItemNameMaxLength = 100;
     }
 }

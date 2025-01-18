@@ -14,8 +14,6 @@ namespace EasyOrder.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
-
         }
 
         public DbSet<Site> Sites { get; set; } = null!;
@@ -25,5 +23,9 @@ namespace EasyOrder.Infrastructure.Data
         public DbSet<MenuCategory> MenuCategories { get; set; } = null!;
 
         public DbSet<MenuItem> MenuItems { get; set; } = null!;
+
+        public DbSet<Order> Orders { get; set; } = null!;
+
+        public DbSet<OrderItem> OrdersItems { get; set; } = null!;
     }
 }
