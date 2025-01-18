@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-namespace EasyOrder.Infrastructure.Data
+﻿namespace EasyOrder.Infrastructure.Data
 {
-    using EasyOrder.Infrastructure.Data.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+
+    using EasyOrder.Infrastructure.Data.Models;
 
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -14,6 +15,13 @@ namespace EasyOrder.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+        }
+
+        public override Task<int> SaveChangesAsync(
+            CancellationToken cancellationToken = default)
+        {
+            this.ApplyAuditInfoRules();
+            return base.SaveChangesAsync(cancellationToken);
         }
 
         public DbSet<Site> Sites { get; set; } = null!;
