@@ -8,10 +8,11 @@
 
     using static EasyOrder.Infrastructure.Data.Constraints;
     using static EasyOrder.Infrastructure.Data.ErrorMessages;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class MenuCategory : DataModel
     {
-        // Foreing key to Site
+        [ForeignKey("Site")]
         public string SiteId { get; set; } = string.Empty;
 
         [Required]
@@ -26,6 +27,8 @@
         public string Description { get; set; } = string.Empty;
 
         // Navigation properties
-        public IList<MenuItem> MyProperty { get; set; } = new List<MenuItem>();
+        public IList<MenuItem> MenuItems { get; set; } = new List<MenuItem>();
+
+        public Site Site { get; set; } = null!;
     }
 }

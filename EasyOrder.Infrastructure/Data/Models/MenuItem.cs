@@ -21,6 +21,8 @@
         [Comment("The description of menu item and/or its ingredients.")]
         public string Description { get; set; } = string.Empty;
 
+        [Column(TypeName = "decimal(18, 2)")]
+        [Comment("The price of the item.")]
         public decimal Price { get; set; }
 
         [Comment("Boolean flag indicating if the item is currently available.")]

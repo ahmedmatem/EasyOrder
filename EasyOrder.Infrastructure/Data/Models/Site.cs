@@ -32,5 +32,7 @@
         public List<Table> Tables { get; set; } = new List<Table>();
 
         public List<ApplicationUser> Employees { get; set; } = new List<ApplicationUser>();
+
+        public List<MenuCategory> MenuCategories { get; set; } = new List<MenuCategory>();
     }
 }
