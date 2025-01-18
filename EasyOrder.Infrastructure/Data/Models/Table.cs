@@ -27,5 +27,7 @@
         // Navigation properties
 
         public Site Site { get; set; } = null!;
+
+        public IList<Order> Orders { get; set; } = new List<Order>();
     }
 }
