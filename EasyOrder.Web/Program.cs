@@ -40,6 +40,7 @@ namespace EasyOrder.Web
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapDefaultControllerRoute();
