@@ -17,7 +17,7 @@
 
         [ForeignKey("Site")]
         [Comment("Unique identifier of the site user/staff participate in.")]
-        public string SiteId { get; set; } = string.Empty;
+        public string? SiteId { get; set; }
 
         // Navigation properties
         public Site Site { get; set; } = null!;

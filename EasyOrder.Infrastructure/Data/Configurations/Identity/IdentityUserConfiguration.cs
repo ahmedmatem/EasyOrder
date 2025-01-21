@@ -21,7 +21,7 @@
         private void SeedUsers()
         {
             users.Clear();
-            users.Add(NewUser("ahmed@gmal.com", "Ахмед Матем Ахмед"));
+            users.Add(NewUser("ahmedmatem@gmail.com", "Ахмед Матем Ахмед"));
         }
 
         private ApplicationUser NewUser(string email, string fullName)

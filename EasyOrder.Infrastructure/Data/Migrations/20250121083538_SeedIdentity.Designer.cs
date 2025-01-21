@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EasyOrder.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250121081115_SeedIdentity")]
+    [Migration("20250121083538_SeedIdentity")]
     partial class SeedIdentity
     {
         /// <inheritdoc />
@@ -347,7 +347,8 @@ namespace EasyOrder.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "bc11b696-d492-40c5-bd3c-262e0699ee47",
+                            Id = "38969be1-381f-4a1d-92c8-e0914691ee8b",
+                            ConcurrencyStamp = "2864e285-3a9b-46e4-9e8e-bd98f0d40667",
                             Name = "SupperAdmin",
                             NormalizedName = "SUPPERADMIN"
                         });
@@ -518,8 +519,8 @@ namespace EasyOrder.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            UserId = "0035682c-6f3f-421c-8d5c-7c2f784bab5f",
-                            RoleId = "bc11b696-d492-40c5-bd3c-262e0699ee47"
+                            UserId = "2864e285-3a9b-46e4-9e8e-bd98f0d40667",
+                            RoleId = "38969be1-381f-4a1d-92c8-e0914691ee8b"
                         });
                 });
 
@@ -555,7 +556,6 @@ namespace EasyOrder.Infrastructure.Data.Migrations
                         .HasComment("User full name.");
 
                     b.Property<string>("SiteId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)")
                         .HasComment("Unique identifier of the site user/staff participate in.");
 
@@ -566,20 +566,19 @@ namespace EasyOrder.Infrastructure.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "0035682c-6f3f-421c-8d5c-7c2f784bab5f",
+                            Id = "2864e285-3a9b-46e4-9e8e-bd98f0d40667",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "ed1a9fdc-f4f8-4595-af0b-e07ee0989b8b",
-                            Email = "ahmed@gmal.com",
+                            ConcurrencyStamp = "57902ec8-38bf-4f27-bbb7-8c23511e53e7",
+                            Email = "ahmedmatem@gmail.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
-                            NormalizedEmail = "AHMED@GMAL.COM",
-                            NormalizedUserName = "AHMED",
+                            NormalizedEmail = "AHMEDMATEM@GMAIL.COM",
+                            NormalizedUserName = "AHMEDMATEM",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7097fb1f-a6d2-49d0-8cb1-537855ac7c83",
+                            SecurityStamp = "d06fec36-6ba1-4a0d-8a85-e1e4625006f2",
                             TwoFactorEnabled = false,
-                            UserName = "ahmed",
-                            FullName = "Ахмед Матем Ахмед",
-                            SiteId = ""
+                            UserName = "ahmedmatem",
+                            FullName = "Ахмед Матем Ахмед"
                         });
                 });
 
@@ -693,9 +692,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
                 {
                     b.HasOne("EasyOrder.Infrastructure.Data.Models.Site", "Site")
                         .WithMany("Employees")
-                        .HasForeignKey("SiteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SiteId");
 
                     b.Navigation("Site");
                 });

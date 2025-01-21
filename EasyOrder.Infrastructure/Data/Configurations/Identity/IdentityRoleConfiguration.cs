@@ -4,6 +4,8 @@
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
+    using static EasyOrder.Infrastructure.Data.Configurations.Identity.IdentityUserConfiguration;
+
     public class IdentityRoleConfiguration : IEntityTypeConfiguration<IdentityRole>
     {
         public static readonly IList<IdentityRole> roles = new List<IdentityRole>();
@@ -21,6 +23,7 @@
             {
                 Name = "SupperAdmin",
                 NormalizedName = "SupperAdmin".ToUpper(),
+                ConcurrencyStamp = users[0].Id
             });
         }
     }
