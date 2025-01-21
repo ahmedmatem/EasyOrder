@@ -4,7 +4,7 @@
     using Microsoft.EntityFrameworkCore;
 
     using EasyOrder.Infrastructure.Data.Models;
-    using EasyOrder.Infrastructure.Data.Configurations;
+    using EasyOrder.Infrastructure.Data.Configurations.Identity;
 
     public class ApplicationDbContext : IdentityDbContext
     {
@@ -18,6 +18,7 @@
             // data seeds
             builder.ApplyConfiguration(new IdentityUserConfiguration());
             builder.ApplyConfiguration(new IdentityRoleConfiguration());
+            builder.ApplyConfiguration(new IdentityUserRoleConfiguration());
         }
 
         public override Task<int> SaveChangesAsync(
