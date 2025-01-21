@@ -1,4 +1,4 @@
-﻿namespace EasyOrder.Infrastructure.Data.Configurations
+﻿namespace EasyOrder.Infrastructure.Data.Configurations.Identity
 {
     using Microsoft.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -18,7 +18,7 @@
             builder.HasData(users);
         }
 
-        private void SeedUsers() 
+        private void SeedUsers()
         {
             users.Clear();
             users.Add(NewUser("ahmed@gmal.com", "Ахмед Матем Ахмед"));

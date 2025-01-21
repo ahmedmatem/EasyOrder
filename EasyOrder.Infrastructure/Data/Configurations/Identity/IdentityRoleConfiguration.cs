@@ -1,4 +1,4 @@
-﻿namespace EasyOrder.Infrastructure.Data.Configurations
+﻿namespace EasyOrder.Infrastructure.Data.Configurations.Identity
 {
     using Microsoft.AspNetCore.Identity;
     using Microsoft.EntityFrameworkCore;
