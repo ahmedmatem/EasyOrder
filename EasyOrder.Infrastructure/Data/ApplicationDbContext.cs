@@ -4,17 +4,20 @@
     using Microsoft.EntityFrameworkCore;
 
     using EasyOrder.Infrastructure.Data.Models;
+    using EasyOrder.Infrastructure.Data.Configurations;
 
     public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
+            : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            // data seeds
+            builder.ApplyConfiguration(new IdentityUserConfiguration());
+            builder.ApplyConfiguration(new IdentityRoleConfiguration());
         }
 
         public override Task<int> SaveChangesAsync(

@@ -20,6 +20,7 @@
 
         private void SeedUsers() 
         {
+            users.Clear();
             users.Add(NewUser("ahmed@gmal.com", "Ахмед Матем Ахмед"));
         }
 

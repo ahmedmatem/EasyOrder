@@ -64,7 +64,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
 
                     b.HasIndex("SiteId");
 
-                    b.ToTable("MenuCategories");
+                    b.ToTable("MenuCategories", (string)null);
                 });
 
             modelBuilder.Entity("EasyOrder.Infrastructure.Data.Models.MenuItem", b =>
@@ -131,7 +131,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
 
                     b.HasIndex("MenuCategoryId");
 
-                    b.ToTable("MenuItems");
+                    b.ToTable("MenuItems", (string)null);
                 });
 
             modelBuilder.Entity("EasyOrder.Infrastructure.Data.Models.Order", b =>
@@ -168,7 +168,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
 
                     b.HasIndex("TableId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("EasyOrder.Infrastructure.Data.Models.OrderItem", b =>
@@ -220,7 +220,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrdersItems");
+                    b.ToTable("OrdersItems", (string)null);
                 });
 
             modelBuilder.Entity("EasyOrder.Infrastructure.Data.Models.Site", b =>
@@ -265,7 +265,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Sites", t =>
+                    b.ToTable("Sites", null, t =>
                         {
                             t.HasComment("Represents the model of food and beverage establishments.");
                         });
@@ -312,7 +312,7 @@ namespace EasyOrder.Infrastructure.Data.Migrations
 
                     b.HasIndex("SiteId");
 
-                    b.ToTable("Tables");
+                    b.ToTable("Tables", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

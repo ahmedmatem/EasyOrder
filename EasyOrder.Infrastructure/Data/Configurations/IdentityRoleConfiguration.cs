@@ -16,6 +16,7 @@
 
         private void SeedRoles()
         {
+            roles.Clear();
             roles.Add(new IdentityRole()
             {
                 Name = "SupperAdmin",
